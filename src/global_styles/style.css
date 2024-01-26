@@ -13,6 +13,7 @@ body {
 textarea {
   resize: none;
 }
+
 .container_page {
   position: relative;
   display: flex;
@@ -23,12 +24,143 @@ textarea {
   min-height: 100%;
   padding: 4rem;
 }
+.div_logo {
+  margin-bottom: 8rem auto;
+}
+.div_logo img {
+  width: 12rem;
+  height: 4.8rem;
+}
+.div_content_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-left: 20rem;
+  width: 68rem;
+  height: 73.6rem;
+}
+.text_area {
+  height: 100%;
+}
+textarea {
+  all: unset;
+  width: 100%;
+  height: 50%;
+
+  word-wrap: break-word;
+
+  color: #0a3871;
+  font-family: Inter;
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.alert_span {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+}
+.alert_span img {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+span {
+  color: var(--Gray-gray-400, #495057);
+  font-family: Inter;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 18px */
+}
+.div_buttons {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.grid_content_two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 40rem;
+  height: 94.4rem auto;
+  flex-shrink: 0;
+
+  border-radius: 3.2rem;
+  background: var(--White, #fff);
+
+  padding: 3.2rem;
+
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+.grid_content_two img {
+  width: 33.6rem;
+  height: 30.4rem;
+  flex-shrink: 0;
+  margin-bottom: 3.2rem;
+}
+.grid_two_div_span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  width: 100%;
+  height: auto;
+}
+.first-child {
+  align-self: stretch;
+  color: var(--Gray-gray-500, #343a40);
+  text-align: center;
+  font-family: Inter;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 28.8px */
+}
+.second_child {
+  color: var(--Gray-gray-400, #495057);
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+}
+
+.content_text_detected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+}
+.content_text_detected p {
+  width: 33.6rem;
+  height: 60%;
+  flex-shrink: 0;
+
+  word-wrap: break-word;
+
+  color: var(--Gray-gray-400, #495057);
+  font-family: Inter;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 36px */
+}
 .deactivate {
   display: none;
 }
 .activate {
   display: flex;
 }
+
 .div_alert_copy {
   position: absolute;
   align-items: center;

@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="src/global_styles/style.css">
     <link rel="stylesheet" href="src/global_styles/buttons.css">
     <link rel="stylesheet" href="src/global_styles/colors.css">
-    <link rel="stylesheet" href="src/global_styles/contentOne.css">
-    <link rel="stylesheet" href="src/global_styles/contentTwo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
@@ -15,8 +13,7 @@
 </head>
 <body>
     <div class="container_page">
-        <!-- init contentOne -->
-        <div> 
+        <div class="grid_content_one">
             <div class="div_logo">
                 <img src="./assets/logo.svg" alt="Logomarca da alura" class="logo">
             </div>
@@ -26,7 +23,7 @@
                     <textarea cols="30" rows="10" placeholder="Digite seu texto"></textarea>
                 </div>
         
-                <div>
+                <div class="div_alert_buttons">
                     <div class="alert_span">
                         <img src="./assets/alert-icon.svg" alt="Icone circular com um sinal de exclamação no meio">
                         <span>Apenas letras minúsculas e sem acento.</span>
@@ -40,9 +37,8 @@
             </form>
         </div>
 
-        <!-- init contentTwo -->
         <form class="grid_content_two">
-            <div class="content_text_detected ">
+            <div class="content_text_detected deactivate">
                 <p></p>
                 <div>
                     <button class="copy">Copiar</button>
@@ -50,7 +46,7 @@
                 </div>
             </div>
 
-            <div class="content_not_found deactivate">
+            <div class="content_not_found">
                 <img src="./assets/img-not-found.svg" alt="desenho de um personagem humano olhando por uma lupa">
                 <div class="grid_two_div_span">
                     <span class="first-child">Nenhuma mensagem <br> encontrada</span>
