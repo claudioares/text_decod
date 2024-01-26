@@ -1,0 +1,71 @@
+.cripty {
+  display: flex;
+  width: 32.8rem;
+  padding: 24px;
+  align-items: flex-start;
+  gap: 0.8rem;
+  flex-shrink: 0;
+
+  border-radius: 2.4rem;
+  background: var(--Dark-blue-dark-blue-300, #0a3871);
+  color: var(--Light-blue-light-blue-100);
+}
+.cripty:hover {
+  opacity: 0.9;
+}
+.descripty {
+  display: flex;
+  width: 32.8rem;
+  padding: 2.4rem;
+  align-items: flex-start;
+  gap: 0.8rem;
+  flex: 1 0 0;
+
+  border-radius: 2.4rem;
+  background: var(--Light-blue-light-blue-100);
+  border: 1px solid var(--Dark-blue-dark-blue-300, #0a3871);
+}
+.descripty:hover {
+  border: 1px solid rgb(37, 65, 15);
+  opacity: 0.8;
+}
+.copy {
+  display: flex;
+  width: 33.6rem;
+  padding: 2.4rem;
+  align-items: flex-start;
+  gap: 0.8rem;
+
+  border-radius: 2.4rem;
+  border: 1px solid var(--Dark-blue-dark-blue-300, #0a3871);
+}
+.copy:hover {
+  border: 1px solid rgb(37, 65, 15);
+  opacity: 0.8;
+}
+.clean {
+  display: flex;
+  width: 33.6rem;
+  padding: 2.4rem;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+
+  border-radius: 2.4rem;
+  border: 1px solid var(--Dark-blue-dark-blue-300, #0a3871);
+}
+.clean:hover {
+  border: 1px solid rgb(37, 65, 15);
+  opacity: 0.8;
+}
+.div_buttons {
+  display: flex;
+  gap: 2.4rem;
+}
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}

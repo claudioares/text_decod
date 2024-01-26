@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+}
+textarea {
+  resize: none;
+}
+.container_page {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 8rem;
+  background: var(--Light-blue-light-blue-100, #f3f5fc);
+  width: 100%;
+  min-height: 100%;
+  padding: 4rem;
+}
+.deactivate {
+  display: none;
+}
+.activate {
+  display: flex;
+}
+.div_alert_copy {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  bottom: 50%;
+  font-family: Inter;
+  font-size: 2rem;
+
+  color: green;
+}

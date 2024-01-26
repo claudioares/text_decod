@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/global_styles/style.css">
+    <link rel="stylesheet" href="src/global_styles/buttons.css">
+    <link rel="stylesheet" href="src/global_styles/colors.css">
+    <link rel="stylesheet" href="src/global_styles/contentOne.css">
+    <link rel="stylesheet" href="src/global_styles/contentTwo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <title>text_decod_alura</title>
+</head>
+<body>
+    <div class="container_page">
+        <!-- init contentOne -->
+        <div> 
+            <div class="div_logo">
+                <img src="./assets/logo.svg" alt="Logomarca da alura" class="logo">
+            </div>
+     
+            <form class="div_content_form">
+                <div class="text_area">
+                    <textarea cols="30" rows="10" placeholder="Digite seu texto"></textarea>
+                </div>
+        
+                <div>
+                    <div class="alert_span">
+                        <img src="./assets/alert-icon.svg" alt="Icone circular com um sinal de exclamação no meio">
+                        <span>Apenas letras minúsculas e sem acento.</span>
+                    </div>
+                    
+                    <div class="div_buttons">
+                        <button class="cripty">Criptografar</button>
+                        <button class="descripty">Descriptografar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- init contentTwo -->
+        <form class="grid_content_two">
+            <div class="content_text_detected ">
+                <p></p>
+                <div>
+                    <button class="copy">Copiar</button>
+                    <button class="clean">Limpar</button>
+                </div>
+            </div>
+
+            <div class="content_not_found deactivate">
+                <img src="./assets/img-not-found.svg" alt="desenho de um personagem humano olhando por uma lupa">
+                <div class="grid_two_div_span">
+                    <span class="first-child">Nenhuma mensagem <br> encontrada</span>
+                    <span class="second_child">Digite um texto que você deseja criptografar ou descriptografar.</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <span class="div_alert_copy deactivate">Copiado para área de transferencia</span>
+
+
+    <script type="module" src="src/script.js"></script>
+</body>
+</html>
