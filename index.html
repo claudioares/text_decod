@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="src/global_styles/style.css">
     <link rel="stylesheet" href="src/global_styles/buttons.css">
     <link rel="stylesheet" href="src/global_styles/colors.css">
+    <link rel="stylesheet" href="src/global_styles/media.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
@@ -14,9 +15,7 @@
 <body>
     <div class="container_page">
         <div class="grid_content_one">
-            <div class="div_logo">
-                <img src="./assets/logo.svg" alt="Logomarca da alura" class="logo">
-            </div>
+            <img src="./assets/logo.svg" alt="Logomarca da alura" class="logo">
      
             <form class="div_content_form">
                 <div class="text_area">
@@ -46,17 +45,20 @@
                 </div>
             </div>
 
-            <div class="content_not_found">
+            <div class="content_not_found ">
                 <img src="./assets/img-not-found.svg" alt="desenho de um personagem humano olhando por uma lupa">
                 <div class="grid_two_div_span">
-                    <span class="first-child">Nenhuma mensagem <br> encontrada</span>
+                    <span class="first-child">Nenhuma mensagem encontrada</span>
                     <span class="second_child">Digite um texto que você deseja criptografar ou descriptografar.</span>
                 </div>
-            </form>
-        </div>
+            </div>
+
+            <div class="div_alert_copy">
+                <span class="alert_copy deactivate ">Copiado para área de transferencia</span>
+            </div>
+        </form>
     </div>
 
-    <span class="div_alert_copy deactivate">Copiado para área de transferencia</span>
 
 
     <script type="module" src="src/script.js"></script>

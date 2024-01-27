@@ -5,7 +5,7 @@ const divWordCripty = document.querySelector(".content_text_detected");
 const contentNotFound = document.querySelector(".content_not_found");
 const wordCripty = document.querySelector(".content_text_detected p");
 const copy = document.querySelector(".copy");
-const alertCopy = document.querySelector(".div_alert_copy");
+const alertCopy = document.querySelector(".alert_copy");
 const clean = document.querySelector(".clean");
 
 
