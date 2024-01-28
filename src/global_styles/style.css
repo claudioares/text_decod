@@ -22,7 +22,7 @@ textarea {
   gap: 8rem;
   background: var(--Light-blue-light-blue-100, #f3f5fc);
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   padding: 4rem;
 }
 .grid_content_one {
