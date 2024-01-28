@@ -23,7 +23,7 @@ cripty.addEventListener('click', (e)=>{
     contentNotFound.classList.add('deactivate');
 
     let listLetter = textValue.split('');
-    const lettersToCode = ["a", "e", "i", "o", "u"]
+    const lettersToCode = ["a", "á", "e", "i", "o", "u"]
 
 
     listLetter.forEach((letter, index) =>{
@@ -32,6 +32,7 @@ cripty.addEventListener('click', (e)=>{
             lettersToCode.forEach(search =>{
                 if(letter === search){
                     if(search === "a"){listLetter[index] = "ai"}
+                    if(search === "á"){listLetter[index] = "*"}
                     if(search === "e"){listLetter[index] = "enter"}
                     if(search === "i"){listLetter[index] = "imes"}
                     if(search === "o"){listLetter[index] = "ober"}
@@ -89,6 +90,7 @@ descripty.addEventListener('click', (e)=>{
     contentNotFound.classList.add('deactivate');
 
     let newWords = textValue.replaceAll("ai", "a");
+    newWords = newWords.replaceAll("*", "á");
     newWords = newWords.replaceAll("enter", "e");
     newWords = newWords.replaceAll("imes", "i");
     newWords = newWords.replaceAll("ober", "o");
