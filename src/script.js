@@ -17,11 +17,11 @@ function correctingCharacters (array) {
         'D',
         'E' ,'É', 'È', 'Ê', 'Ë',
         'F', 'G', 'H',
-        'Í', 'Ì', 'Î', 'Ï',
+        'I', 'Í', 'Ì', 'Î', 'Ï',
         'J', 'L', 'M', 'N',
-        'Ó', 'Ò', 'Ô', 'Õ', 'Ö',
+        'O','Ó', 'Ò', 'Ô', 'Õ', 'Ö',
         'P', 'Q', 'R', 'S', 'T',
-        'Ú', 'Ù', 'Û', 'Ü',
+        'U', 'Ú', 'Ù', 'Û', 'Ü',
         'V', 'X', 'Z',
         'Y', 'W', 'K',
         'á', 'à', 'â', 'ã', 'ä',
@@ -48,6 +48,36 @@ function correctingCharacters (array) {
 
     const specCharacters = ['!', '@', '#', '$', '%', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', ';', ':', '<', '>', ',', '.', '/', '?', '|', '\\', '`', '~', '^'];
     let filterSpecialTyped = array.filter(char => !specCharacters.includes(char));
+
+    const special_A = ['Á', 'À', 'Â', 'Ã', 'Ä', 'á', 'à', 'â', 'ã', 'ä',];
+    const special_C = ['Ç', 'ç'];
+    const special_E = ['É', 'È', 'Ê', 'Ë', 'é', 'è', 'ê', 'ë'];
+    const special_I = ['Í', 'Ì', 'Î', 'Ï', 'í', 'ì', 'î', 'ï'];
+    const special_O = ['Ó', 'Ò', 'Ô', 'Õ', 'Ö', 'ó', 'ò', 'ô', 'õ', 'ö'];
+    const special_U = ['Ù', 'Û', 'Ü', 'ú', 'ù', 'û', 'ü'];
+
+    filterSpecialTyped.forEach((letter, index)=>{
+        special_A.forEach(search=>{
+            if(search === letter) {filterSpecialTyped[index] = "a"}
+        });
+        special_C.forEach(search=>{
+            if(search === letter) {filterSpecialTyped[index] = "c"}
+        });
+        special_E.forEach(search=>{
+            if(search === letter) {filterSpecialTyped[index] = "e"}
+        });
+        special_I.forEach(search=>{
+            if(search === letter) {filterSpecialTyped[index] = "i"}
+        });
+        special_O.forEach(search=>{
+            if(search === letter) {filterSpecialTyped[index] = "o"}
+        });
+        special_U.forEach(search=>{
+            if(search === letter) {filterSpecialTyped[index] = "u"}
+        });
+    })
+    
+    
 
     let newTextLowerCase = '';
     filterSpecialTyped.forEach(letter => {
