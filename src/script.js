@@ -9,6 +9,58 @@ const alertCopy = document.querySelector(".alert_copy");
 const clean = document.querySelector(".clean");
 
 
+function correctingCharacters (array) {
+    const forbiddenCharacters = [
+        'A', 'Á', 'À', 'Â', 'Ã', 'Ä',
+        'B',
+        'C', 'Ç',
+        'D',
+        'E' ,'É', 'È', 'Ê', 'Ë',
+        'F', 'G', 'H',
+        'Í', 'Ì', 'Î', 'Ï',
+        'J', 'L', 'M', 'N',
+        'Ó', 'Ò', 'Ô', 'Õ', 'Ö',
+        'P', 'Q', 'R', 'S', 'T',
+        'Ú', 'Ù', 'Û', 'Ü',
+        'V', 'X', 'Z',
+        'Y', 'W', 'K',
+        'á', 'à', 'â', 'ã', 'ä',
+        'ç',
+        'é', 'è', 'ê', 'ë',
+        'í', 'ì', 'î', 'ï',
+        'ó', 'ò', 'ô', 'õ', 'ö',
+        'ú', 'ù', 'û', 'ü',
+        '!', '@', '#', '$', '%', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', ';', ':', '<', '>', ',', '.', '/', '?', '|', '\\', '`', '~', '^'
+      ];
+
+    let listOfSpecialTyped = [];
+
+    array.forEach(element=>{
+        forbiddenCharacters.forEach(char => {
+            if(element === char) {
+                listOfSpecialTyped.push(element)
+            }
+        })
+    });
+
+
+    listOfSpecialTyped && alert(`Voce digitou um ou mais caracters proibidos ${listOfSpecialTyped}. Deseja que o sistema corrija?`);
+
+    const specCharacters = ['!', '@', '#', '$', '%', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', ';', ':', '<', '>', ',', '.', '/', '?', '|', '\\', '`', '~', '^'];
+    let filterSpecialTyped = array.filter(char => !specCharacters.includes(char));
+
+    let newTextLowerCase = '';
+    filterSpecialTyped.forEach(letter => {
+        newTextLowerCase += letter;
+    })
+
+    newTextLowerCase = newTextLowerCase.toLowerCase();
+
+    return newTextLowerCase;
+      
+};
+
+
 cripty.addEventListener('click', (e)=>{
     e.preventDefault();
     
@@ -22,28 +74,32 @@ cripty.addEventListener('click', (e)=>{
     divWordCripty.classList.remove('deactivate');
     contentNotFound.classList.add('deactivate');
 
-    let listLetter = textValue.split('');
-    const lettersToCode = ["a", "á", "e", "i", "o", "u"]
+    const listLetter = textValue.split('');
+    const lettersToCode = ["a", "e", "i", "o", "u"]
+
+    let result = correctingCharacters(listLetter);
+
+    result = result.split('');
 
 
-    listLetter.forEach((letter, index) =>{
+    result.forEach((letter, index) =>{
+    
         if(index >= 0 && index < listLetter.length){
 
             lettersToCode.forEach(search =>{
                 if(letter === search){
-                    if(search === "a"){listLetter[index] = "ai"}
-                    if(search === "á"){listLetter[index] = "*"}
-                    if(search === "e"){listLetter[index] = "enter"}
-                    if(search === "i"){listLetter[index] = "imes"}
-                    if(search === "o"){listLetter[index] = "ober"}
-                    if(search === "u"){listLetter[index] = "ufat"}
+                    if(search === "a"){result[index] = "ai"}
+                    if(search === "e"){result[index] = "enter"}
+                    if(search === "i"){result[index] = "imes"}
+                    if(search === "o"){result[index] = "ober"}
+                    if(search === "u"){result[index] = "ufat"}
                 }
             })
         }
     } );
 
     let newWordCripty = '';
-    listLetter.forEach(letter => {
+    result.forEach(letter => {
         newWordCripty += letter
     })
 
@@ -100,3 +156,4 @@ descripty.addEventListener('click', (e)=>{
 
     text.value = ""
 })
+
