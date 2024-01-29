@@ -13,7 +13,6 @@ body {
 textarea {
   resize: none;
 }
-
 .container_page {
   position: relative;
   display: flex;
@@ -196,4 +195,47 @@ span {
   font-size: 2rem;
 
   color: green;
+}
+
+.div_modal {
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #343a4048;
+
+  width: 100%;
+  min-height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.content_modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #43566f;
+
+  padding: 3rem;
+  gap: 2.6rem;
+  border-radius: 1rem;
+  width: 30% auto;
+  height: 34%;
+}
+.content_modal span {
+  font-family: Inter;
+  font-size: 1.4rem;
+
+  color: rgb(255, 255, 255);
+}
+.div_modal_button {
+  display: flex;
+  gap: 1rem;
+}
+.div_modal_button button {
+  width: 5rem;
+  height: 3.3rem;
+  border-radius: 0.6rem;
 }

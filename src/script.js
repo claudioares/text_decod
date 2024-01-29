@@ -7,9 +7,13 @@ const wordCripty = document.querySelector(".content_text_detected p");
 const copy = document.querySelector(".copy");
 const alertCopy = document.querySelector(".alert_copy");
 const clean = document.querySelector(".clean");
+const modal = document.querySelector(".div_modal");
+const modalSpan = document.querySelector(".content_modal span");
+const button_y = document.querySelector(".button_y");
+const button_n = document.querySelector(".button_n");
 
 
-function correctingCharacters (array) {
+function detectedCharacters (array) {
     const forbiddenCharacters = [
         'A', 'Á', 'À', 'Â', 'Ã', 'Ä',
         'B',
@@ -44,7 +48,12 @@ function correctingCharacters (array) {
     });
 
 
-    listOfSpecialTyped && alert(`Voce digitou um ou mais caracters proibidos ${listOfSpecialTyped}. Deseja que o sistema corrija?`);
+    return listOfSpecialTyped;
+}
+
+
+function correctingCharacters (array) {
+   
 
     const specCharacters = ['!', '@', '#', '$', '%', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', ';', ':', '<', '>', ',', '.', '/', '?', '|', '\\', '`', '~', '^'];
     let filterSpecialTyped = array.filter(char => !specCharacters.includes(char));
@@ -77,8 +86,6 @@ function correctingCharacters (array) {
         });
     })
     
-    
-
     let newTextLowerCase = '';
     filterSpecialTyped.forEach(letter => {
         newTextLowerCase += letter;
@@ -101,41 +108,98 @@ cripty.addEventListener('click', (e)=>{
         return
     }
 
-    divWordCripty.classList.remove('deactivate');
-    contentNotFound.classList.add('deactivate');
 
     const listLetter = textValue.split('');
     const lettersToCode = ["a", "e", "i", "o", "u"]
 
-    let result = correctingCharacters(listLetter);
-
-    result = result.split('');
+    const prohibitedCharacters = detectedCharacters(listLetter);
 
 
-    result.forEach((letter, index) =>{
+    if(prohibitedCharacters.length !== 0){
+        modal.classList.remove("deactivate");
+        modal.classList.add("activate");
+        modalSpan.innerHTML = `Voce digitou um ou mais caracters proibidos ${prohibitedCharacters}. Deseja que o sistema corrija?`;
+
+        button_y.addEventListener("click", (e)=>{
+            e.preventDefault();
+
+            modal.classList.remove("activate");
+            modal.classList.add("deactivate");
+
+            let result = correctingCharacters(listLetter);
+            result = result.split('');
     
-        if(index >= 0 && index < listLetter.length){
-
-            lettersToCode.forEach(search =>{
-                if(letter === search){
-                    if(search === "a"){result[index] = "ai"}
-                    if(search === "e"){result[index] = "enter"}
-                    if(search === "i"){result[index] = "imes"}
-                    if(search === "o"){result[index] = "ober"}
-                    if(search === "u"){result[index] = "ufat"}
+            result.forEach((letter, index) =>{
+            
+                if(index >= 0 && index < result.length){
+        
+                    lettersToCode.forEach(search =>{
+                        if(letter === search){
+                            if(search === "a"){result[index] = "ai"}
+                            if(search === "e"){result[index] = "enter"}
+                            if(search === "i"){result[index] = "imes"}
+                            if(search === "o"){result[index] = "ober"}
+                            if(search === "u"){result[index] = "ufat"}
+                        }
+                    })
                 }
+    
+                let newWordCripty = '';
+                result.forEach(letter => {
+                    newWordCripty += letter
+                })
+            
+                wordCripty.innerHTML = newWordCripty
+            
+                text.value = ""
+            } );
+
+            divWordCripty.classList.remove('deactivate');
+            contentNotFound.classList.add('deactivate');
+
+            return;
+        });
+
+        button_n.addEventListener("click", (e)=>{
+            e.preventDefault();
+
+            modal.classList.remove("activate");
+            modal.classList.add("deactivate");
+
+            text.value = '';
+
+            return;
+        })
+    } else {
+        divWordCripty.classList.remove('deactivate');
+        contentNotFound.classList.add('deactivate');
+        listLetter.forEach((letter, index) =>{
+        
+            if(index >= 0 && index < listLetter.length){
+    
+                lettersToCode.forEach(search =>{
+                    if(letter === search){
+                        if(search === "a"){listLetter[index] = "ai"}
+                        if(search === "e"){listLetter[index] = "enter"}
+                        if(search === "i"){listLetter[index] = "imes"}
+                        if(search === "o"){listLetter[index] = "ober"}
+                        if(search === "u"){listLetter[index] = "ufat"}
+                    }
+                })
+            }
+
+            let newWordCripty = '';
+            listLetter.forEach(letter => {
+                newWordCripty += letter
             })
-        }
-    } );
+        
+            wordCripty.innerHTML = newWordCripty
+        
+            text.value = ""
+        } );
 
-    let newWordCripty = '';
-    result.forEach(letter => {
-        newWordCripty += letter
-    })
-
-    wordCripty.innerHTML = newWordCripty
-
-    text.value = ""
+        return;
+    };
 });
 
 copy.addEventListener("click", (e)=>{
