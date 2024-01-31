@@ -1,3 +1,16 @@
+@media (max-width: 1366px) and (max-height: 768px) {
+  .container_page {
+    width: 1368px;
+    height: 768px;
+    gap: 3rem;
+  }
+  .logo {
+    left: 0;
+  }
+  .grid_content_one{
+    margin-left: 0;
+  }
+}
 @media (max-width: 1325px) and (max-height: 1100px) {
   .container_page {
     gap: 6rem;
